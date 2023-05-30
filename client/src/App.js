@@ -1,9 +1,8 @@
-import abi from "./contract/chai.json";
+import abi from "./contract/mini.json";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import Buy from "./components/Buy";
-import Memos from "./components/Memos";
-import chai from "./chai.png";
+import msrit from "./msrit.png";
 import "./App.css";
 
 function App() {
@@ -53,17 +52,20 @@ function App() {
   }, []);
   // console.log(state);
   return (
-    <div style={{ backgroundColor: "#EFEFEF", height: "100%" }}>
-      <img src={chai} className="img-fluid" alt=".." width="100%" />
+    <div style={{ backgroundColor: "#EFEFEF", height: "70%",}}>
+      <div className="d-flex align-items-center justify-content-center" width="100%" style={{display: "flex",alignItems: "center"}}>
+      <img src={msrit} height="5%" width="30%"  style={{display: "flex",alignItems: "center",justifyContent: "center"}} />
+      </div>
+      <br />
+      <br />
       <p
-        class="text-muted lead "
+        class="text-muted lead h-100 d-flex align-items-center justify-content-center"
         style={{ marginTop: "10px", marginLeft: "5px" }}
       >
         <small>Connected Account - {account}</small>
       </p>
       <div className="container">
         <Buy state={state} />
-        <Memos state={state} />
       </div>
     </div>
   );
